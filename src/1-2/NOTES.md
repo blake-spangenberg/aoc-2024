@@ -1,6 +1,6 @@
-# 1
+# 1-2
 
-https://adventofcode.com/2024/day/1
+https://adventofcode.com/2024/day/1#part2
 
 ## Reading Comprehension
 
@@ -21,4 +21,4 @@ Sorted Example:
 
 ### Objective
 
-Compute the aggregate delta between list 1 and list 2.
+Compute the similarity score by adding up each number in the left list after multiplying it by the number of times that number appears in the right list.

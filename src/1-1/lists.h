@@ -3,6 +3,34 @@
 
 #include "../util.h"
 
+#define TEST_DATA (0)
+
+#if TEST_DATA
+
+typedef struct {
+    unsigned data[6];
+} list_t;
+
+static const list_t LIST1 = {{
+    3,
+    4,
+    2,
+    1,
+    3,
+    3,
+}};
+
+static const list_t LIST2 = {{
+    4,
+    3,
+    5,
+    3,
+    9,
+    3,
+}};
+
+#else
+
 typedef struct {
     unsigned data[1000];
 } list_t;
@@ -2012,5 +2040,7 @@ static const list_t LIST2 = {{
     27193,
     19172,
 }};
+
+#endif
 
 #endif // #define LISTS_H__
