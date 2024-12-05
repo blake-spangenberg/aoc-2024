@@ -10,6 +10,11 @@
 - Make
 - GCC (`c2x`)
 - Python 3
+- xxd
+
+```
+sudo apt-get install -y xxd
+```
 
 ## Build
 
