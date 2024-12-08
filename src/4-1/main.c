@@ -45,9 +45,6 @@ int main(void)
 {
     unsigned count = 0;
 
-    bool valid = _is_valid(&PUZZLE, 9, 3, -1, -1, XMAS);
-    printf("valid=%d\n", valid);
-
     for (unsigned row = 0; row < ROWS; row++) {
         for (unsigned col = 0; col < COLS; col++) {
             for (unsigned i = 0; i < ARRAY_LEN(DIRECTIONS); i++) {
