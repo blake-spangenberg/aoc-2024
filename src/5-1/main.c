@@ -37,6 +37,7 @@ static bool _is_valid(const page_set_t* set)
 
     return true;
 }
+
 static unsigned _middle(const page_set_t* set)
 {
     assert(set->len & 1); // assume odd

@@ -1446,12 +1446,12 @@ for line in input.splitlines():
             )
         )
     else:
-        len = line.count(',') + 1
+        page_len = line.count(',') + 1
         line = line.replace(',', ', ')
-        pages.append((len, line))
+        pages.append((page_len, line))
 
-        if len > max_page_set_len:
-            max_page_set_len = len
+        if page_len > max_page_set_len:
+            max_page_set_len = page_len
 
 STRUCT = f"""
 typedef struct {{
@@ -1471,6 +1471,9 @@ with open(OUT_FILEPATH, 'w') as file:
 
     file.write(f"{STRUCT}\n")
 
+    file.write(f"#define PAGE_RULE_COUNT ({len(rules)})\n")
+
+    file.write("\n")
     file.write("static const page_rule_t PAGE_RULES[] = {\n")
     for x, y in rules:
         file.write(f"    {{{x}, {y}}},\n")

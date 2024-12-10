@@ -11,6 +11,8 @@ typedef struct {
     unsigned pages[23];
 } page_set_t;
 
+#define PAGE_RULE_COUNT (1176)
+
 static const page_rule_t PAGE_RULES[] = {
     {48, 74},
     {95, 99},
