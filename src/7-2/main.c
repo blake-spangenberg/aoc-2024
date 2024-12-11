@@ -1,9 +1,17 @@
 #include <stdio.h>
 #include <stdbool.h>
 #include <string.h>
+#include <stdlib.h>
 
 #include "../util.h"
-#include "input.h"
+#include "../7-1/input.h"
+
+static long _concat_long(long a, long b)
+{
+    char buff[42];
+    snprintf(buff, sizeof(buff), "%ld%ld", a, b);
+    return strtol(buff, NULL, 10);
+}
 
 static bool _is_solveable(const equation_t* equation, unsigned index, unsigned long result)
 {
@@ -22,6 +30,10 @@ static bool _is_solveable(const equation_t* equation, unsigned index, unsigned l
     }
 
     if (_is_solveable(equation, index, result + operand)) {
+        return true;
+    }
+
+    if (_is_solveable(equation, index, _concat_long(result, operand))) {
         return true;
     }
 
