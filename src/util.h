@@ -17,4 +17,7 @@
 
 #define STATIC_ASSERT(condition, message) _Static_assert(condition, message)
 
+#define IS_ODD(n) ((n) & 1)
+#define IS_EVEN(n) (!IS_ODD(n)) 
+
 #endif // UTIL_H__
